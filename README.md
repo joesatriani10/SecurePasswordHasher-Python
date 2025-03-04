@@ -29,3 +29,41 @@ The project implements secure password hashing and verification with the followi
 - It is recommended to use a virtual environment for dependency management.
 
 ---
+
+## Usage Example
+
+Below is an example of how to use the secure password hasher in Python:
+
+```python
+from secure_password_hasher import hash_password, verify_password
+
+password = "Test"
+hashed = hash_password(password)
+print(f"Generated hash: {hashed}")
+
+is_valid = verify_password(password, hashed)
+print(f"Password valid: {is_valid}")
+```
+
+## Security Recommendations
+
+- **High Iteration Count:**  
+  Use a high number of iterations (e.g., 100,000 or more) to slow down brute-force attacks. Review and update this number periodically as hardware performance improves.
+
+- **Unique, Random Salt:**  
+  Always generate a new, random salt for each password to ensure that identical passwords produce different hashes.
+
+- **Secure Storage Format:**  
+  Store the iteration count, salt (Base64 encoded), and hash (Base64 encoded) together. This allows you to use the same parameters during password verification.
+
+- **Use Established Libraries:**  
+  For production environments, consider using well-tested libraries (e.g., bcrypt, Argon2) that offer additional security features.
+
+- **Constant-Time Comparison:**  
+  Implement constant-time comparison when verifying passwords to prevent timing attacks.
+
+- **Secure Data Handling:**  
+  Ensure that hashed passwords and salts are stored securely and that all data transmissions are encrypted.
+
+- **Regular Security Reviews:**  
+  Periodically review and update your password hashing mechanism and security measures according to the latest best practices.
