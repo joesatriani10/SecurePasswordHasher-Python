@@ -1,0 +1,29 @@
+---
+
+### .gitignore
+
+```gitignore
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+env/
+venv/
+ENV/
+VENV/
+.env
+.venv
+
+# PyCharm project files
+.idea/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# OS generated files
+.DS_Store
+Thumbs.db
